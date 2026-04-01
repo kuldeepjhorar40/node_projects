@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "kudeep"
+  ],
+  "homepage": "https://github.com/kuldeepjhorar40/node_projects#readme",
+  "bugs": {
+    "url": "https://github.com/kuldeepjhorar40/node_projects/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuldeepjhorar40/node_projects.git"
+  },
+  "license": "ISC",
+  "author": "kuldeep",
+  "type": "commonjs",
+  "type":"module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
