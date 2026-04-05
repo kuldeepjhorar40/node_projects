@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style = "background-color: black ; color : rgb(185, 61, 61)">
+    <div class="main">
+        <h1>todo</h1>
+        <input type="text" placeholder="add task" >
+        <button type="submit" id ="add">add Task</button>
+               
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        let input = document.querySelector("input");
+        let ul = document.querySelector("ul");
+        let addBtn = document.querySelector("#add");
+        const delBtn = document.createElement("button");
+        delBtn.setAttribute("type","submit");
+        delBtn.setAttribute("id","delBtn");
+        // delBtn.setAttribute("margin-left","10px");
+        delBtn.textContent = "delete task";
+
+        
+        addBtn.addEventListener("click",function(ev){
+            ev.preventDefault();
+            if(input.value){
+                let listItem = document.createElement("li");
+                listItem.textContent = input.value;
+                 const delBtn = document.createElement("button");
+        delBtn.setAttribute("type","submit");
+        delBtn.setAttribute("id","delBtn");
+        // delBtn.setAttribute("margin-left","10px");
+        delBtn.textContent = "delete task";
+
+        
+                listItem.appendChild(delBtn);
+                ul.appendChild(listItem);
+
+            }
+            else{
+                console.log("no input");
+            }
+        })
+
+        ul.addEventListener("click",function(ev){
+            if(ev.target.tagName == "BUTTON"){
+                ev.preventDefault();
+                let listItem = ev.target.parentNode;
+                listItem.remove();
+            }
+            
+            
+        })
+    </script>
+</body>
+</html>

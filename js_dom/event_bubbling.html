@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: black ; color : rgb(185, 61, 61)">
+    <div class="main" style = "background-color: rgb(89, 97, 130) ; height:200px ;color : rgb(216, 216, 35)" >
+        <ul style = "background-color: rgb(76, 76, 202)">
+            <li  style = "margin:20px ; background-color: rgb(32, 32, 131)">13</li>
+            <li style = "margin:20px; background-color: rgb(32, 32, 131)">43</li>
+            <li style = "margin:20px ; background-color: rgb(32, 32, 131)">47</li>
+        </ul>
+    </div>
+
+    <script>
+        const div = document.querySelector(".main");
+        const ul = document.querySelector("ul");
+        const li = document.querySelectorAll("li");
+
+        const hello = function(ev){
+            ev.stopPropagation();
+            console.log(ev.currentTarget.tagName, "clicked");
+        }
+        div.addEventListener("click" , hello);
+        ul.addEventListener("click" , hello);
+        for(let l of li){
+            l.addEventListener("click" , hello);
+        }
+        
+    </script>
+</body>
+</html>

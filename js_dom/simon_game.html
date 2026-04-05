@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style = "background-color: black ; color : rgb(205, 58, 58);" >
+    <h1>simon game</h1>
+    <h1>level :0</h1>
+    <button>start game</button>
+    <div class="main" style = "background-color: rgb(18, 161, 189) ; color : rgb(180, 172, 172);display:flex ; text-align: center;justify-content: center;padding:50px" >
+    <div class="dv" id="0" style="height:100px ;width:100px ; margin :auto ;border-radius: 30%;
+    background-color: red">red</div>
+    <div class="dv" id="1" style="height:100px ;width:100px ; margin :auto ;border-radius: 30%;
+    background-color: blue">blue</div>
+    <div class="dv" id="2" style="height:100px ;width:100px ; margin :auto ;border-radius: 30%;
+    background-color: green">green</div>
+    <div class="dv" id="3" style="height:100px ;width:100px ; margin :auto ;border-radius: 30%;
+    background-color:yellow">yellow</div>
+    </div>
+
+    <script>
+        const rand = function(){
+            let num = Math.floor(Math.random()*4);
+            return num;
+        }
+        
+        
+        let divs = document.querySelectorAll(".dv");
+        
+        const blink = function(idx){
+            let originalColor = divs[idx].style.backgroundColor;
+            setTimeout(function(){
+                divs[idx].style.backgroundColor = "white";
+                setTimeout(function(){
+                    divs[idx].style.backgroundColor = originalColor;
+                }, 500);
+            },1000)
+        };
+        let user_seq = [];
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].addEventListener("click", function(){
+                blink(i);
+                user_seq
+
+            });
+        }
+        let output = document.createElement("h3");
+        document.querySelector("button").addEventListener("click",function(ev){
+            ev.preventDefault();
+            let game_seq = [];
+            let level = 1;
+            let out = 0;
+            while(!out){
+
+                let idx  = rand();
+                game_seq.push(idx);
+                
+
+                
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

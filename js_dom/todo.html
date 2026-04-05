@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style = "background-color: black ; color : rgb(185, 61, 61)">
+    <div class="main">
+        <h1>todo</h1>
+        <form action="" id="form1" style="margin:20px">
+        <input type="text" placeholder="add task" id = "add">
+        </form>
+        <form action="" id = "form2" style="margin:20px">
+        <input type="text" placeholder="remove task" id = "remove">
+        </form>
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        let addBtn = document.querySelector("#add");
+        let rmBtn = document.querySelector("#remove");
+        let form1 = document.querySelector("#form1");
+        let form2 = document.querySelector("#form2");
+        let ul = document.querySelector("ul");
+
+
+        form1.addEventListener("submit" , function(ev){
+            ev.preventDefault();
+            let li1 = document.createElement("li");
+            let textNode = document.createTextNode(addBtn.value);
+            li1.appendChild(textNode);
+            li1.setAttribute("id" , addBtn.value );
+            ul.appendChild(li1);
+
+        })
+        form2.addEventListener("submit" , function(ev){
+            ev.preventDefault();
+            let id = rmBtn.value;
+            let child = document.querySelector("#"+id);
+            if(child && ul.contains(child)){
+                ul.removeChild(child);
+            }
+            else{
+                console.log("child not found");
+            }
+            
+
+        })
+    </script>
+</body>
+</html>
