@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: rgb(31, 29, 29) ; color:red">
+    <h1></h1>
+    <form action="wtf">
+        <input type="text" id="user" type="text">
+        <input type="text" class="pass" type="password">
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit",(ev)=>ev.preventDefault());
+        const head = document.querySelector("h1");
+        document.querySelector("#user").addEventListener("change",function (ev){
+            let text = document.createTextNode(ev.target.value);
+            head.appendChild(text);
+        }
+    );
+    </script>
+</body>
+</html>
