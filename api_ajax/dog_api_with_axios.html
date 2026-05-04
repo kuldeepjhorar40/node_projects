@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color:antiquewhite ">
+    <h1>get facts</h1>
+    <button>show new facts</button>
+    <img src="" alt="">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        
+        let url = "https://dog.ceo/api/breeds/image/random";
+        async function getFacts(){
+            try{
+                let reponse = await axios.get(url);
+                // console.log(reponse);
+                let data  =  reponse.data.message;
+                // console.log(data);
+                return data;
+
+            }
+            catch(error){
+                return "/";
+            }
+            // finally{
+
+            // }
+        }
+        const  img1 = document.querySelector("img");
+        async function showFacts(){
+            try{
+                let fact  = await getFacts();
+                img1.setAttribute("src",fact);
+                // console.log(fact);
+
+            }
+            catch(error){
+                img1.setAttribute("src",error);
+            }
+            // finally{
+
+            // }
+        }
+        document.querySelector("button").addEventListener("click",()=>{
+            showFacts();
+        })
+        
+
+    </script>
+</body>
+</html>
+    
+</body>
+</html>

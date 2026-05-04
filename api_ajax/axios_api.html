@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color:antiquewhite ">
+    <h1>get facts</h1>
+    <button>show new facts</button>
+    <p></p>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        
+        let url = "https://catfact.ninja/fact";
+        async function getFacts(){
+            try{
+                let reponse = await axios.get(url);
+                // console.log(reponse);
+                let data  = await reponse.data.fact;
+                return data;
+
+            }
+            catch(error){
+                return "no fact found";
+            }
+            // finally{
+
+            // }
+        }
+        const  p1 = document.querySelector("p");
+        async function showFacts(){
+            try{
+                let fact  = await getFacts();
+                p1.innerText = fact;
+                // console.log(fact);
+
+            }
+            catch(error){
+                p1.innerText =  "no fact found";
+            }
+            // finally{
+
+            // }
+        }
+        document.querySelector("button").addEventListener("click",()=>{
+            showFacts();
+        })
+        
+
+    </script>
+</body>
+</html>
